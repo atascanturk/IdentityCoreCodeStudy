@@ -1,0 +1,46 @@
+﻿@model AppUser
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-8">
+            <table class="table table-hover table-sm">
+                <tr>
+                    <th>Isim:</th>
+                    <td>@Model.Name</td>
+
+                </tr>
+
+                <tr>
+                    <th>Soyisim:</th>
+                    <td>@Model.SurName</td>
+
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <td>@Model.Email</td>
+
+                </tr>
+                <tr>
+                    <th>Telefon:</th>
+                    <td>@Model.PhoneNumber</td>
+
+                </tr>
+
+
+
+
+
+            </table>
+
+        </div>
+
+        <div class="col col-md-4">
+            <img src="~/img/@Model.PictureUrl" alt="@Model.Name" class="w-100 img-fluid" />
+        </div>
+    </div>
+
+</div>

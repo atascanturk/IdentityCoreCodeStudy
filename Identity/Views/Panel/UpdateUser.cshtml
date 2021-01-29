@@ -1,0 +1,50 @@
+﻿@model UserUpdateViewModel
+
+@{
+    ViewData["Title"] = "UpdateUser";
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+    
+    }
+
+
+<form asp-action="UpdateUser" asp-controller="Panel" method="post" class="w-75 mx-auto p-3" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <span asp-validation-for="Name"></span>
+        <input asp-for="Name" />
+    </div>
+    <div class="form-group">
+        <label asp-for="SurName"></label>
+        <span asp-validation-for="SurName"></span>
+        <input asp-for="SurName" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <span asp-validation-for="Email"></span>
+        <input asp-for="Email" />
+    </div>
+    <div class="form-group">
+        <label asp-for="PhoneNumber"></label>
+        <span asp-validation-for="PhoneNumber"></span>
+        <input asp-for="PhoneNumber" />
+
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+
+            <div class="col-md-4">
+                <label>Bir önceki resminiz</label>
+                <img src="~/img/@Model.PictureUrl" alt="@Model.Name" class="w-100 img-fluid " />
+            </div>
+            <div class="col-md-8">
+                <input type="file" asp-for="@Model.Picture" />
+            </div>
+        </div>
+    </div>
+    <div asp-validation-summary="ModelOnly" class="text-danger">
+
+    </div>
+    <button type="submit" class="btn btn-info btn-sm ">Kaydet</button>
+</form>
+
